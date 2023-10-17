@@ -19,8 +19,8 @@ func New() *gin.Engine {
 		{
 			userGroup.GET("/batch", controller.UserController{}.Batch)
 			userGroup.POST("", controller.UserController{}.Create)
-			userGroup.PUT("", controller.UserController{}.Update)
-			userGroup.DELETE("", controller.UserController{}.Delete)
+			userGroup.PUT(":id", controller.UserController{}.Update)
+			userGroup.DELETE(":id", controller.UserController{}.Delete)
 		}
 	}
 
